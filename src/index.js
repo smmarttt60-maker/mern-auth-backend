@@ -6,8 +6,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
-import mongoSanitize from "express-mongo-sanitize";
-import xssClean from "xss-clean";
+
 
 import authRoutes from "./routes/auth.routes.js";
 import { errorHandler } from "./middlewares/error.handler.js";
@@ -17,9 +16,8 @@ dotenv.config();
 const app = express();
 
 //  Security Middlewares
-app.use(helmet());                // Security headers
-app.use(mongoSanitize());         // Prevent NoSQL injection
-app.use(xssClean());              // Prevent XSS attacks
+app.use(helmet());                // Security header
+
 
 //  Basic Middlewares
 app.use(express.json());

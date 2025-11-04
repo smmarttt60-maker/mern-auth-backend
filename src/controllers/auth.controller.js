@@ -87,6 +87,7 @@ export const loginUser = asyncHandler(async (req, res) => {
   });
 
   //  6. Remove password before response
+  
   user.password = undefined;
 
   //  7. Success Response
